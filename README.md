@@ -1,38 +1,25 @@
-# Bini Mentoria Científica — GitHub Pages
+# Mentoria Científica — Daniel Bini
 
-Landing page da Bini Mentoria Científica.
+Página estática para GitHub Pages.
 
-## Público
+## Arquivos
 
-Estudantes e pesquisadores de Ciências Agrárias e Biológicas:
-- TCC
-- Projetos de pesquisa
-- Mestrado
-- Doutorado
+- `index.html` — conteúdo da página
+- `style.css` — estilos
+- `images/daniel-bini.png` — foto sem fundo
 
-## Serviços
+## Publicar no GitHub Pages
 
-### Mentoria Completa
-Acompanhamento de 4 meses, com encontros quinzenais e suporte via WhatsApp. Inclui plano de ação, orientações, ajustes, acompanhamento da escrita e preparação para qualificação e defesa.
+1. Abra o repositório `dbinimaster-beep.github.io`.
+2. Envie `index.html`, `style.css` e a pasta `images`.
+3. Vá em **Settings → Pages**.
+4. Em **Build and deployment**, selecione **Deploy from a branch**.
+5. Escolha `main` e `/ (root)`.
+6. Salve.
 
-### Leitura Crítica + Plano de Ação
-Para pesquisadores que já estão avançados na escrita. Inclui leitura crítica, identificação dos principais pontos de ajuste, plano de ação e 1 encontro individual.
+## Antes de publicar
 
-## Publicação
+Os botões de WhatsApp estão temporariamente configurados com um número de exemplo. No `index.html`, procure por `5531999999999` e substitua pelo seu número, com código do país e DDD, sem espaços, parênteses ou símbolos.
 
-Repositório: `dbinimaster-beep.github.io`
-
-No GitHub:
-1. Settings
-2. Pages
-3. Source → Deploy from a branch
-4. Branch → `main`
-5. Folder → `/ (root)`
-6. Save
-
-## Personalização
-
-- Substituir o espaço de foto pela foto profissional.
-- Trocar `https://wa.me/SEUNUMERO` pelo link real do WhatsApp.
-- Conferir o Instagram.
-- Revisar os textos e, se desejar, adicionar preços.
+O link do Currículo Lattes está configurado para:
+http://lattes.cnpq.br/7929101121975903
