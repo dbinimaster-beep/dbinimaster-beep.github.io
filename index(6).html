@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bini Mentoria Científica — mentoria individual em escrita científica para Ciências Agrárias e Biológicas.">
+<title>Bini Mentoria Científica | Prof. Daniel Bini</title>
+
+<style>
+:root{
+  --bg:#0b0d10;
+  --bg-soft:#11151a;
+  --card:#171c22;
+  --text:#f4f4f2;
+  --muted:#b8bec6;
+  --accent:#f2c400;
+  --line:rgba(242,196,0,.28);
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(92%,var(--max));margin:auto}
+.hero{
+  padding:82px 0 72px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(242,196,0,.09),transparent 30%),
+    linear-gradient(135deg,#080a0d,#11151a);
+  border-bottom:1px solid var(--line);
+}
+.eyebrow,.label{
+  color:var(--accent);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(2.8rem,7vw,5.8rem);
+  line-height:.96;
+  letter-spacing:-2px;
+  max-width:900px;
+  margin:18px 0;
+}
+h1 span{color:var(--accent)}
+h2{
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.08;
+  margin:10px 0 18px;
+}
+h3{margin-bottom:8px}
+p{color:var(--muted)}
+.lead{
+  max-width:760px;
+  font-size:1.2rem;
+}
+.highlight{
+  margin:26px 0;
+  padding-left:18px;
+  border-left:3px solid var(--accent);
+  max-width:760px;
+  color:var(--text);
+  font-weight:800;
+}
+.accent{color:var(--accent)}
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 22px;
+  background:var(--accent);
+  color:#111;
+  border-radius:7px;
+  font-weight:800;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);background:#ffd21a}
+section{
+  padding:82px 0;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.section-head{
+  max-width:800px;
+  margin-bottom:40px;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  padding:28px;
+}
+.card h3{font-size:1.2rem}
+.card ul{
+  padding-left:20px;
+  color:var(--muted);
+  margin-top:15px;
+}
+.card li{margin:7px 0}
+.offer{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.offer .btn{margin-top:auto}
+.offer-tag{
+  color:var(--accent);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.authority{
+  background:var(--bg-soft);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.authority-box{
+  padding:34px;
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:38px;
+  align-items:center;
+}
+.photo-placeholder{
+  width:100%;
+  aspect-ratio:4/5;
+  border:1px dashed rgba(242,196,0,.65);
+  border-radius:14px;
+  background:#0d1014;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:var(--muted);
+  padding:20px;
+  overflow:hidden;
+}
+.photo-placeholder img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.photo-placeholder .photo-instruction{
+  font-size:.9rem;
+  line-height:1.5;
+}
+.social-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+.social-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:11px 17px;
+  border-radius:8px;
+  font-weight:800;
+  color:#fff;
+  transition:.2s ease;
+}
+.social-link:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.lattes-link{
+  background:var(--accent);
+  color:#111;
+}
+.instagram-link{
+  background:#171c22;
+  color:var(--accent);
+  border:1px solid var(--accent);
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:28px;
+}
+.stat{
+  padding:20px;
+  background:#101419;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:9px;
+}
+.stat b{
+  display:block;
+  color:var(--accent);
+  font-size:1.7rem;
+  line-height:1.1;
+  margin-bottom:5px;
+}
+.authority-box h2{margin-top:8px}
+.authority-box p{max-width:850px}
+.contact-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+.contact{
+  padding:11px 15px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:7px;
+  color:var(--muted);
+}
+.contact:hover{border-color:var(--accent);color:var(--text)}
+.faq{
+  display:grid;
+  gap:12px;
+}
+.faq-item{
+  background:var(--card);
+  border-radius:10px;
+  padding:22px 25px;
+  border:1px solid rgba(255,255,255,.06);
+}
+.faq-item h3{font-size:1rem}
+.final-cta{
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 0,rgba(242,196,0,.10),transparent 40%),
+    var(--bg-soft);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.final-cta p{
+  max-width:700px;
+  margin:0 auto;
+}
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:.92rem;
+}
+@media(max-width:760px){
+  .grid-2,.grid-3,.about-grid,.stats{grid-template-columns:1fr}
+  section{padding:62px 0}
+  .hero{padding:60px 0}
+  .photo-placeholder{max-width:320px;margin:0 auto}
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Bini Mentoria Científica</div>
+
+    <h1>
+      SUA PESQUISA AVANÇA,<br>
+      <span>MAS O TEXTO NÃO?</span>
+    </h1>
+
+    <p class="lead">
+      <strong>Mentoria individual focada em escrita científica para estudantes e pesquisadores
+      das Ciências Agrárias e Biológicas.</strong>
+    </p>
+
+    <p class="highlight">
+      Eu te direciono para destravar e avançar seu texto.
+    </p>
+
+    <a class="btn" href="#ofertas">CONHEÇA A MENTORIA →</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Talvez este seja o seu momento</div>
+      <h2>Você tem pesquisa, dados e conteúdo. Mas precisa de clareza sobre <span class="accent">o que fazer a seguir.</span></h2>
+      <p>
+        A mentoria é focada na escrita científica, mas também envolve organização,
+        raciocínio, decisões sobre o trabalho e preparação para qualificação e defesa.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Escrita científica</h3>
+        <p>Estruturação, desenvolvimento e aprimoramento do texto científico.</p>
+      </div>
+
+      <div class="card">
+        <h3>Organização e raciocínio</h3>
+        <p>Clareza para organizar ideias, argumentos, resultados e prioridades.</p>
+      </div>
+
+      <div class="card">
+        <h3>Qualificação e defesa</h3>
+        <p>Preparação e direcionamento para esses momentos da pesquisa.</p>
+      </div>
+    </div>
+
+    <p class="highlight">
+      A mentoria começa exatamente de onde você está.
+    </p>
+  </div>
+</section>
+
+<section id="ofertas">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Duas formas de trabalhar comigo</div>
+      <h2>Escolha o acompanhamento de acordo com <span class="accent">o momento do seu trabalho.</span></h2>
+    </div>
+
+    <div class="grid-2">
+
+      <article class="card offer">
+        <div class="offer-tag">01 · Acompanhamento individual</div>
+        <h2>MENTORIA COMPLETA</h2>
+
+        <p>
+          <strong>
+            Para quem quer acompanhamento individual ao longo do desenvolvimento
+            do trabalho, com foco na escrita científica e nas decisões necessárias
+            para a pesquisa avançar.
+          </strong>
+        </p>
+
+        <p class="accent" style="margin-top:16px">
+          <strong>4 meses · encontros quinzenais · suporte via WhatsApp</strong>
+        </p>
+
+        <p style="margin-top:18px">
+          A duração é de 4 meses, com acompanhamento personalizado de acordo
+          com a fase e as necessidades de cada aluno.
+        </p>
+
+        <ul>
+          <li>Diagnóstico e plano de ação individual</li>
+          <li>Definição de prioridades e próximos passos</li>
+          <li>Orientação da escrita e do raciocínio científico</li>
+          <li>Organização e desenvolvimento do trabalho</li>
+          <li>Análise e ajustes no texto</li>
+          <li>Orientações para qualificação</li>
+          <li>Preparação para a defesa</li>
+        </ul>
+
+        <a class="btn" href="https://wa.me/5531971423125" target="_blank" rel="noopener">QUERO CONHECER A MENTORIA COMPLETA →</a>
+      </article>
+
+      <article class="card offer">
+        <div class="offer-tag">02 · Análise do trabalho</div>
+        <h2>LEITURA CRÍTICA + PLANO DE AÇÃO</h2>
+
+        <p>
+          <strong>
+            Para quem já tem o trabalho construído e precisa de uma análise
+            especializada para entender o que precisa ser aprimorado e o que fazer a seguir.
+          </strong>
+        </p>
+
+        <p class="accent" style="margin-top:16px">
+          <strong>2 encontros individuais</strong>
+        </p>
+
+        <ul>
+          <li><strong>Encontro 1:</strong> leitura e conhecimento da pesquisa, do trabalho e dos principais desafios.</li>
+          <li><strong>Encontro 2:</strong> feedback, discussão dos pontos de ajuste e definição do plano de ação.</li>
+          <li>Leitura crítica do material já construído</li>
+          <li>Análise da estrutura e do raciocínio</li>
+          <li>Identificação dos principais pontos de aprimoramento</li>
+          <li>Plano de ação personalizado</li>
+        </ul>
+
+        <p style="margin-top:15px">
+          <strong>Importante:</strong> esta modalidade parte de um material já construído.
+        </p>
+
+        <a class="btn" href="https://wa.me/5531971423125" target="_blank" rel="noopener">QUERO CONHECER A LEITURA CRÍTICA →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Como funciona</div>
+      <h2>Você não recebe apenas uma lista de correções. <span class="accent">Recebe direção.</span></h2>
+      <p>
+        Primeiro, entendemos onde sua pesquisa está e o que você já construiu.
+        Depois, identificamos as prioridades, discutimos as decisões necessárias
+        e organizamos os próximos passos.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>01 — LEITURA E DIAGNÓSTICO</h3>
+        <p>Entendimento do momento da pesquisa, do texto e dos principais desafios.</p>
+      </div>
+
+      <div class="card">
+        <h3>02 — PLANO DE AÇÃO</h3>
+        <p>Definição das prioridades e dos próximos passos.</p>
+      </div>
+
+      <div class="card">
+        <h3>03 — ORIENTAÇÃO</h3>
+        <p>Acompanhamento das decisões e do desenvolvimento do trabalho.</p>
+      </div>
+
+      <div class="card">
+        <h3>04 — ESCRITA</h3>
+        <p>Orientação para desenvolver um texto científico mais claro e consistente.</p>
+      </div>
+
+      <div class="card">
+        <h3>05 — QUALIFICAÇÃO</h3>
+        <p>Preparação para esse momento da pesquisa.</p>
+      </div>
+
+      <div class="card">
+        <h3>06 — DEFESA</h3>
+        <p>Organização e preparação para apresentar e defender sua pesquisa.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">O objetivo</div>
+      <h2>O objetivo não é apenas escrever mais. É saber <span class="accent">o que precisa ser feito para o seu trabalho avançar.</span></h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>CLAREZA</h3>
+        <p>Para compreender o que sua pesquisa precisa neste momento.</p>
+      </div>
+
+      <div class="card">
+        <h3>DIREÇÃO</h3>
+        <p>Para definir prioridades e saber qual deve ser o próximo passo.</p>
+      </div>
+
+      <div class="card">
+        <h3>CONSISTÊNCIA</h3>
+        <p>Para conectar melhor ideias, argumentos, resultados e texto.</p>
+      </div>
+
+      <div class="card">
+        <h3>AUTONOMIA</h3>
+        <p>Para compreender as decisões do próprio trabalho e desenvolver sua pesquisa.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Para quem é</div>
+      <h2>Do projeto ao doutorado.</h2>
+      <p>
+        A mentoria atende estudantes e pesquisadores das
+        <strong>Ciências Agrárias e Ciências Biológicas</strong>,
+        em diferentes etapas da formação e da pesquisa.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>TCC</h3>
+        <p>Estruturação, escrita, desenvolvimento e finalização.</p>
+      </div>
+
+      <div class="card">
+        <h3>PROJETOS</h3>
+        <p>Definição, organização e desenvolvimento do projeto de pesquisa.</p>
+      </div>
+
+      <div class="card">
+        <h3>MESTRADO</h3>
+        <p>Dissertação, escrita, qualificação e defesa.</p>
+      </div>
+
+      <div class="card">
+        <h3>DOUTORADO</h3>
+        <p>Tese, escrita, qualificação e defesa.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Posicionamento</div>
+      <h2>O que a mentoria <span class="accent">não é.</span></h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="card"><h3>Não é escrever o trabalho por você.</h3></div>
+      <div class="card"><h3>Não é uma simples correção gramatical.</h3></div>
+      <div class="card"><h3>Não é uma revisão superficial do texto.</h3></div>
+      <div class="card"><h3>Não é uma lista genérica de sugestões.</h3></div>
+    </div>
+
+    <p class="highlight">
+      É um acompanhamento para quem quer compreender, desenvolver e aprimorar o próprio trabalho científico.
+    </p>
+
+  </div>
+</section>
+
+<section class="authority">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Quem está por trás da mentoria</div>
+      <h2>Prof. Dr. Daniel Bini</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="photo-placeholder">
+        <!--
+          FOTO:
+          Substitua este bloco pela sua foto.
+          Exemplo:
+          <img src="foto-daniel.jpg" alt="Prof. Dr. Daniel Bini">
+        -->
+        <div class="photo-instruction">
+          <strong>INSIRA SUA FOTO AQUI</strong><br><br>
+          Recomenda-se uma foto profissional vertical,
+          de preferência em plano médio.
+        </div>
+      </div>
+
+      <div class="authority-box">
+        <p>
+          Professor e pesquisador nas áreas de Ciências Agrárias e Biológicas,
+          com mais de 15 anos dedicados à pesquisa e à docência.
+        </p>
+
+        <p style="margin-top:14px">
+          Minha atuação envolve pesquisa científica, escrita científica,
+          análise de dados, orientação acadêmica e participação na avaliação
+          de trabalhos científicos.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <b>+15 anos</b>
+            Pesquisa e docência
+          </div>
+
+          <div class="stat">
+            <b>+40</b>
+            Publicações científicas
+          </div>
+
+          <div class="stat">
+            <b>Experiência</b>
+            Em bancas acadêmicas
+          </div>
+        </div>
+
+        <p style="margin-top:22px">
+          Na mentoria, uno <strong>experiência científica, leitura crítica e direção</strong>
+          para ajudar cada pesquisador a compreender melhor seu trabalho,
+          organizar suas ideias e avançar na escrita científica.
+        </p>
+
+        <div class="social-links">
+          <a class="social-link lattes-link"
+             href="https://lattes.cnpq.br/7929101121975903"
+             target="_blank" rel="noopener">
+            CURRÍCULO LATTES →
+          </a>
+
+          <a class="social-link instagram-link"
+             href="https://www.instagram.com/dr.danielbini/"
+             target="_blank" rel="noopener">
+            INSTAGRAM @DR.DANIELBINI →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">Perguntas frequentes</div>
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <h3>Preciso estar no início da pesquisa para fazer a mentoria?</h3>
+        <p>Não. A mentoria começa a partir do momento em que sua pesquisa está e é personalizada de acordo com a sua fase e suas necessidades.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>A mentoria é apenas para quem tem dificuldade de escrever?</h3>
+        <p>Não. A escrita científica é o foco, mas o acompanhamento também envolve organização, raciocínio, decisões sobre o trabalho e preparação para qualificação e defesa.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Vocês escrevem o trabalho para mim?</h3>
+        <p>Não. O trabalho é desenvolvido por você. A mentoria oferece direção, análise crítica e orientação.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Como funciona a Leitura Crítica + Plano de Ação?</h3>
+        <p>São dois encontros individuais. O primeiro é para conhecer a pesquisa e o material construído. O segundo é para apresentar o feedback, discutir os ajustes e definir o plano de ação.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Como funciona a Mentoria Completa?</h3>
+        <p>São 4 meses de acompanhamento, com encontros quinzenais e suporte via WhatsApp. O conteúdo e o direcionamento são personalizados de acordo com a fase e as necessidades do aluno.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quais trabalhos são atendidos?</h3>
+        <p>TCCs, projetos, dissertações e teses, além de diferentes etapas relacionadas ao desenvolvimento da pesquisa.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quais áreas são atendidas?</h3>
+        <p>O foco é em Ciências Agrárias e Ciências Biológicas.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contato" class="final-cta">
+  <div class="container">
+
+    <div class="label">Próximo passo</div>
+
+    <h2>SEU TRABALHO NÃO PRECISA AVANÇAR NO ESCURO.</h2>
+
+    <p>
+      Descubra qual tipo de acompanhamento faz sentido para o momento da sua pesquisa.
+    </p>
+
+    <p style="margin-top:12px">
+      <strong>Mentoria individual em escrita científica para estudantes e pesquisadores
+      das Ciências Agrárias e Biológicas.</strong>
+    </p>
+
+    <p class="accent" style="margin-top:12px">
+      <strong>TCC · PROJETOS · DISSERTAÇÃO · TESE</strong>
+    </p>
+
+    <a class="btn" href="https://wa.me/5531971423125" target="_blank" rel="noopener">
+      QUERO CONHECER A MENTORIA →
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>Prof. Daniel Bini</strong><br>
+    Professor e pesquisador nas áreas de Ciências Agrárias e Biológicas<br>
+    @dr.danielbini
+  </div>
+</footer>
+
+</body>
+</html>
